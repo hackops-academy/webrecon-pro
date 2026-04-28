@@ -1,0 +1,48 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=WebRecon Pro
+GenericName=Web Penetration Testing Tool
+Comment=Professional Web Penetration Testing Framework — All-in-one recon, scanning & reporting
+Exec=bash -c 'python3 /opt/webrecon/main.py --help; exec bash'
+Icon=webrecon
+Terminal=true
+StartupNotify=true
+Categories=Network;Security;System;
+Keywords=pentest;security;hacking;recon;web;scanner;vulnerability;sqli;xss;api;
+Actions=FullScan;SubdomainEnum;VulnScan;HeadersCheck;Fingerprint;APITest;ListScans;
+
+[Desktop Action FullScan]
+Name=🔴 Full Penetration Scan
+Exec=bash -c 'echo "WebRecon Pro — Full Scan"; echo ""; read -p "Enter target URL (e.g. https://example.com): " TARGET; echo ""; python3 /opt/webrecon/main.py scan "$TARGET" -v; echo ""; read -p "Press Enter to close..."; exec bash'
+Terminal=true
+
+[Desktop Action SubdomainEnum]
+Name=🌐 Subdomain Enumeration
+Exec=bash -c 'echo "WebRecon Pro — Subdomain Enum"; echo ""; read -p "Enter target domain (e.g. example.com): " TARGET; echo ""; python3 /opt/webrecon/main.py subdomains "$TARGET" -v; echo ""; read -p "Press Enter to close..."; exec bash'
+Terminal=true
+
+[Desktop Action VulnScan]
+Name=💥 Vulnerability Scan
+Exec=bash -c 'echo "WebRecon Pro — Vulnerability Scanner"; echo ""; read -p "Enter target URL (e.g. https://example.com): " TARGET; echo ""; python3 /opt/webrecon/main.py vuln "$TARGET" -v; echo ""; read -p "Press Enter to close..."; exec bash'
+Terminal=true
+
+[Desktop Action HeadersCheck]
+Name=🛡️ Security Headers Check
+Exec=bash -c 'echo "WebRecon Pro — Headers Check"; echo ""; read -p "Enter target URL (e.g. https://example.com): " TARGET; echo ""; python3 /opt/webrecon/main.py headers "$TARGET" -v; echo ""; read -p "Press Enter to close..."; exec bash'
+Terminal=true
+
+[Desktop Action Fingerprint]
+Name=🔎 Web Fingerprinting
+Exec=bash -c 'echo "WebRecon Pro — Fingerprinting"; echo ""; read -p "Enter target URL (e.g. https://example.com): " TARGET; echo ""; python3 /opt/webrecon/main.py fingerprint "$TARGET" -v; echo ""; read -p "Press Enter to close..."; exec bash'
+Terminal=true
+
+[Desktop Action APITest]
+Name=🔌 API Security Testing
+Exec=bash -c 'echo "WebRecon Pro — API Tester"; echo ""; read -p "Enter target URL (e.g. https://example.com): " TARGET; echo ""; python3 /opt/webrecon/main.py api "$TARGET" -v; echo ""; read -p "Press Enter to close..."; exec bash'
+Terminal=true
+
+[Desktop Action ListScans]
+Name=📋 View Scan History
+Exec=bash -c 'python3 /opt/webrecon/main.py list-scans; echo ""; read -p "Press Enter to close..."; exec bash'
+Terminal=true
