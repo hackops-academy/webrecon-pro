@@ -1,8 +1,12 @@
+#!/usr/bin/env python3
+"""Logging setup for WebRecon Pro."""
 import logging
 
-def setup_logger():
+def setup_logger(level: int = logging.WARNING):
     logging.basicConfig(
-        level=logging.INFO,
+        level=level,
         format="%(asctime)s [%(levelname)s] %(message)s",
+        datefmt="%H:%M:%S",
     )
-    return logging.getLogger("webrecon")
+    logger = logging.getLogger("webrecon")
+    return logger
